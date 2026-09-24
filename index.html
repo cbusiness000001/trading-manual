@@ -382,6 +382,99 @@ input[type=checkbox]:checked{background:var(--blue) url("data:image/svg+xml,%3Cs
 .toast.on{opacity:1;transform:translate(-50%,0)}
 .toast svg.i{color:var(--go)}
 
+/* tools */
+.tk-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px;align-items:start}
+.tk-side{position:sticky;top:20px;display:flex;flex-direction:column;gap:14px}
+.tk-h{font-size:13px;font-weight:500;color:var(--label2);text-transform:uppercase;letter-spacing:.02em;margin:0 16px 7px}
+.tk-group+.tk-h,.tk-f+.tk-h,.tk-list+.tk-h,.tk-seg+.tk-h{margin-top:24px}
+.tk-group{background:var(--bg2);border-radius:14px;box-shadow:var(--shadow);overflow:hidden}
+.tk-row{display:flex;align-items:center;gap:12px;min-height:50px;padding:0 16px;position:relative;cursor:text;transition:background .25s var(--ease)}
+.tk-row+.tk-row::before{content:'';position:absolute;top:0;left:16px;right:0;height:.5px;background:var(--sep)}
+.tk-row:focus-within{background:var(--fill2)}
+.tk-l{flex:1;font-size:17px;white-space:nowrap}
+.tk-in{display:flex;align-items:baseline;gap:3px;font-size:17px;color:var(--label3)}
+.tk-in em{font-style:normal}
+.tk-in input{width:8.5ch;min-width:2ch;max-width:14ch;border:0;background:none;padding:0;text-align:right;font-size:17px;color:var(--label2);outline:none;font-variant-numeric:tabular-nums;transition:color .2s;-moz-appearance:textfield}
+.tk-in input::-webkit-outer-spin-button,.tk-in input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.tk-row:focus-within input{color:var(--blue)}
+.tk-in input:focus-visible{outline:none;box-shadow:none}
+.tk-f{font-size:13px;color:var(--label2);margin:8px 16px 0;line-height:1.45}
+.tk-link{color:var(--blue);font-size:13px;font-weight:500;padding:0}
+.tk-link:hover{text-decoration:underline}
+.tk-seg{display:flex;width:100%;margin:0}
+.tk-seg button{flex:1;padding:7px 4px}
+.tk-fill{margin-top:16px}
+.tk-card{background:var(--bg2);border-radius:18px;box-shadow:var(--shadow);padding:18px 20px}
+.tk-eb{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--label2)}
+.tk-eb svg.i{width:16px;height:16px;color:var(--blue)}
+.tk-big{display:block;font-size:40px;font-weight:700;letter-spacing:-.03em;line-height:1.1;margin-top:6px;transition:color .3s}
+.tk-sub{font-size:15px;color:var(--label2);margin-top:4px;line-height:1.4}
+.tk-sub b{color:var(--label);font-weight:600}
+.tk-meter{height:6px;border-radius:3px;background:var(--fill2);overflow:hidden;margin-top:14px}
+.tk-meter i{display:block;height:100%;width:0;border-radius:3px;background:var(--blue);transition:width .55s var(--ease)}
+.tk-status{display:inline-flex;align-items:center;margin-top:14px;font-size:14px;font-weight:600;line-height:1.35;padding:7px 12px;border-radius:12px;background:var(--fill2);color:var(--label2);transition:background .3s,color .3s}
+.tk-status[data-ok="1"]{background:var(--go-bg);color:var(--go)}
+.tk-status[data-ok="0"]{background:var(--stop-bg);color:var(--stop)}
+.tk-status:empty{display:none}
+.tk-rrh{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-top:6px}
+.tk-mid{font-size:28px;font-weight:700;letter-spacing:-.02em}
+.tk-rrh span{font-size:14px;color:var(--label2);text-align:right}.tk-rrh span b{color:var(--label);font-weight:600}
+.tk-rrbar,.tk-gauge{position:relative;height:10px;border-radius:5px;background:var(--fill2);margin-top:32px}
+.tk-rrbar i,.tk-gauge i{position:absolute;top:0;bottom:0;transition:left .55s var(--ease),width .55s var(--ease),background .3s}
+.tk-rrbar .rk{left:0;background:var(--stop);border-radius:5px 0 0 5px}
+.tk-rrbar .rw{background:var(--go);border-radius:0 5px 5px 0}.tk-rrbar .rw.lo{background:#FF9F0A}
+.tk-gauge i{left:0;border-radius:5px;background:var(--go)}.tk-gauge i.lo{background:var(--stop)}
+.tk-mk{position:absolute;top:-6px;bottom:-6px;width:2px;margin-left:-1px;border-radius:1px;background:var(--label);transition:left .55s var(--ease)}
+.tk-mk em{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);margin-bottom:5px;font-style:normal;font-size:11.5px;font-weight:600;color:var(--label2);white-space:nowrap}
+.tk-rrl{position:relative;display:flex;justify-content:space-between;height:16px;margin-top:9px;font-size:12px;color:var(--label3)}
+.tk-rrl span:nth-child(2){position:absolute;left:50%;transform:translateX(-50%);transition:left .55s var(--ease)}
+.tk-pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.tk-mini{padding:14px 16px}
+.tk-mini b{display:block;font-size:24px;font-weight:700;letter-spacing:-.02em;margin-top:4px}
+.tk-score{display:flex;align-items:center;gap:20px}
+.tk-ring{position:relative;width:100px;height:100px;flex-shrink:0}
+.tk-ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.tk-ring circle{fill:none;stroke-width:9}
+.tk-rbg{stroke:var(--fill2)}
+.tk-rfg{stroke:var(--go);stroke-linecap:round;transition:stroke-dashoffset .7s var(--ease),stroke .3s}
+.tk-ring div{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.tk-ring b{font-size:32px;font-weight:700;letter-spacing:-.03em;line-height:1}
+.tk-ring small{font-size:12px;color:var(--label2);margin-top:2px}
+.tk-score .tk-big{margin-top:2px}
+.tk-tier{display:flex;justify-content:space-between;gap:10px;padding:9px 12px;margin:0 -8px;border-radius:10px;font-size:14px;color:var(--label2);transition:background .3s,color .3s}
+.tk-tier b{font-weight:600;min-width:28px}
+.tk-tier span:last-child{margin-left:auto}
+.tk-tier.on{background:var(--fill2);color:var(--label)}
+.tk-card .tk-tier:first-of-type{margin-top:8px}
+.tk-list{margin:0!important}
+.tk-list li{align-items:center;padding:13px 16px;transition:background .25s var(--ease)}
+.tk-list li:active{background:var(--fill2)}
+.tk-list label{font-size:16px;transition:color .3s}
+.tk-list input:checked+label{color:var(--label2)}
+.tk-list label strong{display:none}
+.tk-list input[type=checkbox]{margin-top:0;transition:background .25s,border-color .25s,transform .35s cubic-bezier(.3,1.6,.5,1)}
+.tk-list input[type=checkbox]:active{transform:scale(.85)}
+.tk-hc{display:flex;justify-content:space-between;align-items:baseline}
+.tk-cnt{text-transform:none;letter-spacing:0;transition:color .3s}
+.tk-cnt.done{color:var(--go);font-weight:600}
+.tk-sum{display:flex;align-items:center;gap:22px;margin-bottom:24px}
+.tk-sum>div:first-child{flex-shrink:0}
+.tk-sum .tk-big{font-size:30px}
+.tk-sum .tk-meter{flex:1;height:8px;border-radius:4px;margin:0}
+.tk-sum .tk-meter i{background:var(--go)}
+.tk-fchead{display:flex;align-items:center;gap:14px;margin-bottom:16px;font-size:13px;color:var(--label2);font-weight:500}
+.tk-fchead .tk-meter{flex:1;margin:0}
+.tk-fchead .tk-meter i{background:var(--go)}
+.tk-fcbtns{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.tk-fcb{display:inline-flex;align-items:center;gap:7px;padding:12px 22px;border-radius:980px;font-size:15px;font-weight:600;background:var(--fill2);color:var(--label);transition:transform .25s cubic-bezier(.3,1.4,.5,1),background .2s,filter .15s}
+.tk-fcb:hover{filter:brightness(.97)}
+.tk-fcb:active{transform:scale(.94)}
+.tk-fcb.go{background:var(--go-bg);color:var(--go)}.tk-fcb.amber{background:var(--amber-bg);color:var(--amber)}
+.tk-fcb svg.i{width:18px;height:18px;stroke-width:2.2}
+.fc .fq{position:absolute;top:18px;left:0;right:0;font-size:12px;font-weight:600;color:var(--label3);text-transform:uppercase;letter-spacing:.06em}
+.tk-anim>*{animation:tkin .55s var(--ease) both}
+.tk-anim>*:nth-child(2){animation-delay:.06s}.tk-anim>*:nth-child(3){animation-delay:.12s}.tk-anim>*:nth-child(n+4){animation-delay:.18s}
+@keyframes tkin{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
 /* tab bar */
 .tabbar{display:none}
 @media (max-width:900px){
@@ -392,6 +485,7 @@ input[type=checkbox]:checked{background:var(--blue) url("data:image/svg+xml,%3Cs
   .grid2{grid-template-columns:1fr}
   .qa{grid-template-columns:1fr 1fr}
   .clock-top{flex-direction:column;gap:8px}.clock-time{text-align:left}
+  .tk-grid{grid-template-columns:1fr;gap:18px}.tk-side{position:static}.tk-first{order:-1;position:sticky;top:calc(env(safe-area-inset-top,0px) + 8px);z-index:5}.tk-tiers{display:none}.tk-first .tk-card{box-shadow:0 6px 24px rgba(0,0,0,.12)}.tk-score{padding:14px 18px}.tk-score .tk-ring{width:78px;height:78px}.tk-score .tk-ring b{font-size:26px}.tk-score .tk-big{font-size:30px}.tk-score .tk-status{margin-top:8px}.tk-big{font-size:34px}.tk-seg button{font-size:12px;padding:6px 2px}.tk-fcb{padding:11px 16px}
   .clock{padding:20px 18px 18px}.ck-stats{grid-template-columns:1fr;gap:8px}.ck-st{display:flex;flex-wrap:wrap;align-items:center;column-gap:10px;padding:9px 12px}.ck-st b{margin:0 0 0 auto;font-size:14.5px}.ck-st em{width:100%}.ck-chart{--lw:78px}.ck-lab{font-size:12px;gap:5px;padding-right:6px}
   .tabbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--bar);-webkit-backdrop-filter:saturate(180%) blur(24px);backdrop-filter:saturate(180%) blur(24px);border-top:.5px solid var(--sep);padding:6px 4px env(safe-area-inset-bottom,0px)}
   .tabbar button{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:10.5px;font-weight:500;color:var(--label3);padding:4px 0 6px}
@@ -2750,24 +2844,73 @@ function setMark(l){const b=$('markBtn');if(!b)return;b.className='btn lg '+(sta
 
 /* tools */
 function toolSnippet(lid,sel,wrapFn){const d=document.createElement('div');d.innerHTML=FLAT[BYID[lid]].h;const el=d.querySelector(sel);return el?(wrapFn?wrapFn(el):el.outerHTML):'';}
+const INST=[['MNQ','MNQ'],['MES','MES'],['NQ','NQ'],['ES','ES'],['EURUSD','EUR/USD'],['STOCK','Stock']];
+const tkRow=(id,label,val,o)=>{o=o||{};return '<label class="tk-row" for="'+id+'"><span class="tk-l">'+label+'</span><span class="tk-in">'+(o.pre?'<em>'+o.pre+'</em>':'')+'<input id="'+id+'" type="number" inputmode="decimal" step="'+(o.step||'any')+'" value="'+val+'">'+(o.suf?'<em>'+o.suf+'</em>':'')+'</span></label>';};
+const tkGroup=(h,body,f)=>(h?'<div class="tk-h">'+h+'</div>':'')+'<div class="tk-group">'+body+'</div>'+(f?'<div class="tk-f">'+f+'</div>':'');
 function vTools(tab){
   tab=tab||'size';const tabs=[['size','Position size'],['odds','Odds'],['score','Setup score'],['check','Checklists'],['cards','Flashcards']];
   let s='<button class="mobile-search" data-act="search">'+ic('search')+'Search</button><header class="lt"><h1>Tools</h1><p>Everything you use before, during and after a trade.</p></header>';
   s+='<div class="seg" data-seg="tools">'+tabs.map(t=>'<button class="'+(tab===t[0]?'on':'')+'" data-go="tools/'+t[0]+'">'+t[1]+'</button>').join('')+'</div>';
-  if(tab==='size')s+='<p style="color:var(--label2);margin-bottom:4px">Enter your planned entry, stop and target. Size rounds down and anything under 2R is flagged.</p>'+toolSnippet('r3','#posCalc');
-  if(tab==='odds')s+='<p style="color:var(--label2);margin-bottom:4px">See what your win rate and average win mean over many trades, and how long a normal losing streak runs.</p>'+toolSnippet('r5','#eWin',el=>el.closest('.calc').outerHTML)+(journal.trades.length?'<button class="btn tinted" data-act="fillodds">Use my Trade log numbers</button>':'');
-  if(tab==='score')s+='<p style="color:var(--label2);margin-bottom:4px">All four base conditions must be true first. Then tick every bonus that applies.</p>'+toolSnippet('w2','#scorer')+toolSnippet('w2','#scOut',el=>el.closest('.calc').outerHTML)+'<button class="btn gray" data-act="clearscore">Clear for next setup</button>';
-  if(tab==='check'){const d=document.createElement('div');d.innerHTML=FLAT[BYID.x4].h;d.querySelector('h1').remove();d.querySelectorAll('p').forEach(p=>p.remove());s+='<div class="lesson">'+d.innerHTML+'</div><button class="btn gray" data-act="clearchecks">Clear for a new day</button>';}
-  if(tab==='cards')s+=cardsHTML();
-  return s;
+  const body=tab==='odds'?toolOdds():tab==='score'?toolScore():tab==='check'?toolCheck():tab==='cards'?cardsHTML():toolSize();
+  return s+'<div class="tk-body'+(ANIM?' tk-anim':'')+'">'+body+'</div>';
 }
+function toolSize(){
+  return '<div class="tk-grid" id="posCalc"><div>'+
+    '<input type="hidden" id="cInst" value="MNQ"><div class="tk-h">Instrument</div><div class="seg tk-seg" data-seg="inst">'+INST.map((x,i)=>'<button class="'+(i?'':'on')+'" data-act="inst" data-v="'+x[0]+'">'+x[1]+'</button>').join('')+'</div>'+
+    tkGroup('Account',tkRow('cAcct','Account size',50000,{pre:'$',step:'1000'})+tkRow('cRisk','Risk per trade',0.4,{suf:'%',step:'0.05'}))+
+    tkGroup('Trade',tkRow('cEntry','Entry',30218)+tkRow('cStop','Stop',30182)+tkRow('cTgt','Target',30312),'Long setups. Size rounds down, and anything under 2R is flagged. Changing the instrument loads example prices.')+
+  '</div><div class="tk-side">'+
+    '<div class="tk-card"><div class="tk-eb">'+ic('ruler')+'Position size</div><b class="tk-big" id="oSize">-</b><div class="tk-sub">Risking <b id="oAct">-</b> of your <b id="oRisk">-</b> budget</div><div class="tk-meter"><i id="pvUse"></i></div><div class="tk-status" id="oMsg"></div></div>'+
+    '<div class="tk-card"><div class="tk-eb">Reward to risk</div><div class="tk-rrh"><b class="tk-mid" id="oRR">-</b><span>Target pays <b id="oRew">-</b></span></div><div class="tk-rrbar"><i class="rk" id="pvRisk"></i><i class="rw" id="pvRew"></i><span class="tk-mk" id="pv2r"><em>2R</em></span></div><div class="tk-rrl"><span>Stop</span><span id="pvEntry">Entry</span><span>Target</span></div></div>'+
+  '</div></div>';
+}
+function toolOdds(){
+  return '<div class="tk-grid"><div>'+
+    tkGroup('Your numbers',tkRow('eWin','Win rate',43.5,{suf:'%',step:'0.5'})+tkRow('eRR','Average win',1.8,{suf:'R',step:'0.1'})+tkRow('eN','Number of trades',100,{step:'10'})+tkRow('eR','Dollars per R',200,{pre:'$',step:'10'}),'Every loss counts as -1R. The losing streak is the longest run you should expect over this many trades.')+
+    (journal.trades.length?'<button class="btn tinted tk-fill" data-act="fillodds">Use my Trade log numbers</button>':'')+
+  '</div><div class="tk-side">'+
+    '<div class="tk-card"><div class="tk-eb">'+ic('log')+'Expectancy per trade</div><b class="tk-big" id="eExp">-</b><div class="tk-sub">About <b id="eTot">-</b> over <span id="eNl">100</span> trades</div></div>'+
+    '<div class="tk-card"><div class="tk-eb">Win rate vs break-even</div><div class="tk-gauge"><i id="pvWin"></i><span class="tk-mk" id="pvBE"><em>Break-even <span id="eBE">-</span></em></span></div><div class="tk-rrl"><span>0%</span><span>50%</span><span>100%</span></div><div class="tk-sub" id="pvEdge"></div></div>'+
+    '<div class="tk-pair"><div class="tk-card tk-mini"><div class="tk-eb">Losing streak</div><b id="eStr">-</b></div><div class="tk-card tk-mini"><div class="tk-eb">Streak cost</div><b id="eDD">-</b></div></div>'+
+  '</div></div>';
+}
+function toolScore(){const d=document.createElement('div');d.innerHTML=FLAT[BYID.w2].h;const ul=d.querySelector('#scorer');
+  return '<div class="tk-grid"><div>'+
+    '<div class="tk-h">Bonus points</div><ul class="checklist tk-list" id="scorer">'+(ul?ul.innerHTML:'')+'</ul>'+
+    '<div class="tk-f">Score only after all four base conditions are true: EMA filter, zone, RSI under 40 and a reversal candle. <button class="tk-link" data-act="clearscore">Clear for next setup</button></div>'+
+  '</div><div class="tk-side tk-first">'+
+    '<div class="tk-card tk-score"><div class="tk-ring"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="42" class="tk-rbg"/><circle cx="50" cy="50" r="42" class="tk-rfg" id="scRing" style="stroke-dasharray:263.89;stroke-dashoffset:263.89"/></svg><div><b id="scOut">0</b><small>of 10</small></div></div>'+
+    '<div><div class="tk-eb">'+ic('target')+'Confluence grade</div><b class="tk-big" id="scGrade">C</b><div class="tk-status" id="scAct">Skip</div></div></div>'+
+    '<div class="tk-card tk-tiers"><div class="tk-eb">Grades</div>'+[['a','8 to 10','A+','Take it'],['b','6 to 7','B','Take it'],['c','0 to 5','C','Skip and log it']].map(x=>'<div class="tk-tier" data-t="'+x[0]+'"><b>'+x[2]+'</b><span>'+x[1]+'</span><span>'+x[3]+'</span></div>').join('')+'</div>'+
+  '</div></div>';
+}
+function toolCheck(){const d=document.createElement('div');d.innerHTML=FLAT[BYID.x4].h;
+  let s='<div class="tk-card tk-sum"><div><div class="tk-eb">'+ic('list')+'Today</div><b class="tk-big" id="clAll">0 of 0</b></div><div class="tk-meter"><i id="clBar"></i></div></div>';
+  d.querySelectorAll('h2').forEach(h=>{const ul=h.nextElementSibling;if(!ul||!ul.matches('ul.checklist'))return;s+='<div class="tk-h tk-hc"><span>'+esc(h.textContent)+'</span><span class="tk-cnt"></span></div><ul class="checklist tk-list tk-cl">'+ul.innerHTML+'</ul>';});
+  return s+'<div class="tk-f">Your ticks save automatically. <button class="tk-link" data-act="clearchecks">Clear for a new day</button></div>';
+}
+function fitIn(el){el.style.width=Math.max(2,String(el.value).length+.4)+'ch';}
+function clProg(){const ls=document.querySelectorAll('#view .tk-cl');if(!ls.length)return;let a=0,n=0;
+  ls.forEach(ul=>{const c=ul.querySelectorAll('input:checked').length,t=ul.querySelectorAll('input').length;a+=c;n+=t;const h=ul.previousElementSibling&&ul.previousElementSibling.querySelector('.tk-cnt');if(h){h.textContent=c+' of '+t;h.classList.toggle('done',c===t);}});
+  put('clAll',a+' of '+n);const b=$('clBar');if(b)b.style.width=(n?a/n*100:0)+'%';}
+/* number tween: animates the numeric part of a result when its surrounding text stays the same */
+function put(id,txt){const el=$(id);if(!el)return;if(el._tw){cancelAnimationFrame(el._tw);el._tw=0;}
+  const re=/\d[\d,]*\.?\d*/,cur=el.textContent||'',a=cur.match(re),b=txt.match(re);
+  if(RM()||!a||!b||cur.replace(re,'#')!==txt.replace(re,'#')){el.textContent=txt;return;}
+  const from=parseFloat(a[0].replace(/,/g,'')),to=parseFloat(b[0].replace(/,/g,''));if(!isFinite(from)||!isFinite(to)||from===to){el.textContent=txt;return;}
+  const raw=b[0],dec=(raw.split('.')[1]||'').length,comma=raw.includes(',')||a[0].includes(','),pre=txt.slice(0,b.index),post=txt.slice(b.index+raw.length),t0=performance.now(),D=380;
+  const fmt=v=>comma?v.toLocaleString('en-US',{minimumFractionDigits:dec,maximumFractionDigits:dec}):v.toFixed(dec);
+  const step=now=>{const k=Math.min(1,(now-t0)/D),e=1-Math.pow(1-k,3);if(k<1){el.textContent=pre+fmt(from+(to-from)*e)+post;el._tw=requestAnimationFrame(step);}else{el.textContent=txt;el._tw=0;}};
+  el._tw=requestAnimationFrame(step);}
 /* flashcards */
 const FACTS=[['MNQ value per point','$2 per point, $0.50 per tick'],['MES value per point','$5 per point, $1.25 per tick'],['US stock open in Colorado','7:30 AM Mountain'],['Your primary trading window','7:45 to 9:00 AM Mountain'],['Futures overnight session starts','4:00 PM Mountain, after the 3:00 to 4:00 PM break'],['The four entry conditions','1H above rising 20 EMA, price in a pre-marked 1H zone, 5M RSI below 40, bullish reversal candle closes'],['Where your stop goes','Lower of zone low or trigger candle low, minus 0.3 to 0.5 x 5M ATR'],['Minimum reward to risk','2R to the first obstacle, or no trade'],['Position size formula','(Account x risk %) divided by (stop distance x $ per point), rounded down'],['Break-even win rate at 2R','33.3%'],['Risk per trade on a Topstep 50K','$150 to $200, about one tenth of the $2,000 MLL'],['News blackout','30 minutes before and 15 minutes after red-folder events'],['Daily limits','2 trades max, stop after 2 losses'],['No new entries after','1:30 PM Mountain'],['EUR/USD pip value','$10 per standard lot, $1 per mini, $0.10 per micro'],['Confluence grades','8 to 10 is A+, 6 to 7 is B, under 6 is C and you skip it'],['Chase rule','Skip if price already ran more than 0.3R past the candle close'],['Expected longest losing streak, 100 trades at 43.5% wins','About 8'],['Contract month codes','H March, M June, U September, Z December']];
 let deck=null,dI=0;
 function buildDeck(){const d=document.createElement('div');d.innerHTML=FLAT[BYID.x2].h;const g=[...d.querySelectorAll('tbody tr')].map(tr=>[tr.children[0].textContent,tr.children[1].textContent]);return FACTS.concat(g);}
 function cardsHTML(){if(!deck){deck=buildDeck();shuffle(deck);dI=0;}const c=deck[dI],known=deck.filter(x=>state.fc[x[0]]).length;
-  return '<p style="color:var(--label2);margin-bottom:12px">Tap the card to flip it. Swipe right if you know it, left to keep practicing. '+known+' of '+deck.length+' marked as known.</p><div class="fcwrap"><div class="fc-hint" id="fcHint"><span class="l">Still learning</span><span class="r">Got it</span></div><div class="fc" id="fc" role="button" tabindex="0" aria-pressed="false" aria-label="Flashcard, tap to flip"><div><div class="ft">'+esc(c[0])+'</div><small>Card '+(dI+1)+' of '+deck.length+(state.fc[c[0]]?', known':'')+'</small></div><div class="fbk"><div class="fb">'+esc(c[1])+'</div><small>Tap to flip back</small></div></div></div>'+
-   '<div class="row-btns" style="justify-content:center"><button class="btn tinted" data-act="fc-flip">Flip</button><button class="btn gray" data-act="fc-again">Still learning</button><button class="btn primary" data-act="fc-know">Got it</button><button class="btn gray" data-act="fc-shuffle">Shuffle</button></div>';}
+  return '<div class="tk-fchead"><span>Card '+(dI+1)+' of '+deck.length+'</span><div class="tk-meter"><i style="width:'+(known/deck.length*100).toFixed(1)+'%"></i></div><span>'+known+' known</span></div>'+
+   '<div class="fcwrap"><div class="fc-hint" id="fcHint"><span class="l">Still learning</span><span class="r">Got it</span></div><div class="fc" id="fc" role="button" tabindex="0" aria-pressed="false" aria-label="Flashcard, tap to flip"><div><span class="fq">Question</span><div class="ft">'+esc(c[0])+'</div><small>'+(state.fc[c[0]]?'Marked as known':'Tap to reveal')+'</small></div><div class="fbk"><span class="fq">Answer</span><div class="fb">'+esc(c[1])+'</div><small>Tap to flip back</small></div></div></div>'+
+   '<div class="tk-fcbtns"><button class="tk-fcb amber" data-act="fc-again">'+ic('x')+'Still learning</button><button class="tk-fcb" data-act="fc-flip">Flip</button><button class="tk-fcb go" data-act="fc-know">'+ic('check')+'Got it</button></div>'+
+   '<div class="tk-f" style="text-align:center;margin-top:14px">Tap the card or press Space to flip. Swipe, or use the arrow keys, to sort it. <button class="tk-link" data-act="fc-shuffle">Shuffle deck</button></div>';}
 function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}}
 
 /* trade log */
@@ -2843,34 +2986,45 @@ function paint(r){
   const v=$('view');
   v.querySelectorAll('.checklist input[type=checkbox]').forEach(cb=>{cb.checked=!!state.checks[cb.id];});
   if(r.v==='lesson'&&BYID[r.p]!=null){const l=FLAT[BYID[r.p]];const ta=$('nt');if(ta)ta.value=state.notes[l.id]||'';if(l.q)paintQuiz(l);}
-  if($('scOut'))score();if($('posCalc'))calcPos();if($('eWin'))calcExp();
+  if($('scOut'))score();if($('posCalc'))calcPos();if($('eWin'))calcExp();clProg();v.querySelectorAll('.tk-in input').forEach(fitIn);
 }
-function score(){let s=0;document.querySelectorAll('.sc').forEach(c=>{if(c.checked)s+=+c.dataset.p;});$('scOut').textContent=s+' / 10';const g=s>=8?['A+','Take it']:s>=6?['B','Take it']:['C','Skip'];$('scGrade').textContent=g[0];$('scAct').textContent=g[1];$('scGrade').style.color=s>=6?'var(--go)':'var(--stop)';}
+function score(){let s=0;document.querySelectorAll('.sc').forEach(c=>{if(c.checked)s+=+c.dataset.p;});const ring=$('scRing');put('scOut',ring?String(s):s+' / 10');const g=s>=8?['A+','Take it','a']:s>=6?['B','Take it','b']:['C','Skip','c'];$('scGrade').textContent=g[0];$('scAct').textContent=g[1];
+  if(!ring){$('scGrade').style.color=s>=6?'var(--go)':'var(--stop)';return;}
+  const col=s>=8?'var(--go)':s>=6?'var(--blue)':'#FF9F0A';ring.style.strokeDashoffset=(263.89*(1-s/10)).toFixed(2);ring.style.stroke=s?col:'transparent';$('scGrade').style.color=s>=6?col:'var(--label)';$('scAct').dataset.ok=s>=6?'1':'0';
+  document.querySelectorAll('#view .tk-tier').forEach(t=>t.classList.toggle('on',t.dataset.t===g[2]));}
 function calcPos(){const inst=$('cInst').value,acct=+$('cAcct').value,rp=+$('cRisk').value,e=+$('cEntry').value,s=+$('cStop').value,t=+$('cTgt').value;
-    const budget=acct*rp/100;$('oRisk').textContent=money(budget);const msg=$('oMsg');const d=e-s;
-    if(!(d>0)){['oSize','oAct','oRR','oRew'].forEach(x=>$(x).textContent='-');msg.style.color='var(--stop)';msg.textContent='For a long, the stop must be below the entry.';return;}
+    const budget=acct*rp/100;put('oRisk',money(budget));const msg=$('oMsg');const d=e-s;
+    const flag=(ok,m)=>{if(!msg.classList.contains('tk-status'))msg.style.color=ok?'var(--go)':'var(--stop)';msg.dataset.ok=ok?'1':'0';msg.textContent=m;};
+    if(!(d>0)){['oSize','oAct','oRR','oRew'].forEach(x=>put(x,'-'));flag(false,'For a long, the stop must be below the entry.');posViz(0,0);return;}
     const mult={MNQ:2,MES:5,NQ:20,ES:50}[inst];let per,size,unit;
     if(mult){per=d*mult;size=Math.floor(budget/per);unit=size===1?' contract':' contracts';}else if(inst==='EURUSD'){per=d*10000*10;size=Math.floor(budget/per*100)/100;unit=' lots';}else{per=d;size=Math.floor(budget/per);unit=' shares';}
-    const act=size*per,rr=(t-e)/d;$('oSize').textContent=size+unit;$('oAct').textContent=money(act);$('oRR').textContent=(t>e?rr.toFixed(2):'-')+'R';$('oRew').textContent=t>e?money(act*rr):'-';
-    if(size<=0){msg.style.color='var(--stop)';msg.textContent='Stop is too wide for this risk budget. Skip the trade, or use a micro contract.';}
-    else if(!(t>e)){msg.style.color='var(--stop)';msg.textContent='Target must be above entry for a long.';}
-    else if(rr<2){msg.style.color='var(--stop)';msg.textContent='Under 2R. By your rules, no trade.';}
-    else{msg.style.color='var(--go)';msg.textContent='Passes the 2R rule. Enter with a bracket order.';}}
-function presetPos(){const pre={MNQ:[30218,30182,30312],MES:[6620,6612,6640],NQ:[30218,30182,30312],ES:[6620,6612,6640],EURUSD:[1.085,1.0832,1.0892],STOCK:[210,209.3,211.8]}[$('cInst').value];if(!pre)return;$('cEntry').value=pre[0];$('cStop').value=pre[1];$('cTgt').value=pre[2];calcPos();}
-function calcExp(){const p=(+$('eWin').value)/100,rr=+$('eRR').value,n=+$('eN').value,R=+$('eR').value;if(!(p>0&&p<1&&rr>0&&n>1))return;const ex=p*rr-(1-p);
-  $('eExp').textContent=fr(ex);$('eTot').textContent=money(ex*n*R);const st=Math.log(n)/Math.log(1/(1-p));$('eStr').textContent='about '+Math.round(st);$('eDD').textContent=money(-Math.round(st)*R);$('eBE').textContent=(100/(1+rr)).toFixed(1)+'%';}
+    const act=size*per,rr=(t-e)/d;put('oSize',size+unit);put('oAct',money(act));put('oRR',(t>e?rr.toFixed(2):'-')+'R');put('oRew',t>e?money(act*rr):'-');
+    if(size<=0)flag(false,'Stop is too wide for this risk budget. Skip the trade, or use a micro contract.');
+    else if(!(t>e))flag(false,'Target must be above entry for a long.');
+    else if(rr<2)flag(false,'Under 2R. By your rules, no trade.');
+    else flag(true,'Passes the 2R rule. Enter with a bracket order.');
+    posViz(budget>0?act/budget:0,t>e?rr:0);}
+function posViz(use,rr){const u=$('pvUse');if(!u)return;u.style.width=(Math.max(0,Math.min(1,use))*100).toFixed(1)+'%';
+  const sc=Math.min(6,Math.max(3,1+rr)),rk=100/sc,rw=Math.min(rr,sc-1)/sc*100;
+  $('pvRisk').style.width=rk+'%';const w=$('pvRew');w.style.left=rk+'%';w.style.width=rw+'%';w.classList.toggle('lo',rr<2);$('pv2r').style.left=(300/sc)+'%';$('pvEntry').style.left=rk+'%';}
+function presetPos(){const pre={MNQ:[30218,30182,30312],MES:[6620,6612,6640],NQ:[30218,30182,30312],ES:[6620,6612,6640],EURUSD:[1.085,1.0832,1.0892],STOCK:[210,209.3,211.8]}[$('cInst').value];if(!pre)return;$('cEntry').value=pre[0];$('cStop').value=pre[1];$('cTgt').value=pre[2];document.querySelectorAll('#posCalc .tk-in input').forEach(fitIn);calcPos();}
+function calcExp(){const p=(+$('eWin').value)/100,rr=+$('eRR').value,n=+$('eN').value,R=+$('eR').value;if(!(p>0&&p<1&&rr>0&&n>1))return;const ex=p*rr-(1-p),be=100/(1+rr);
+  put('eExp',fr(ex));put('eTot',money(ex*n*R));const st=Math.log(n)/Math.log(1/(1-p));put('eStr','about '+Math.round(st));put('eDD',money(-Math.round(st)*R));put('eBE',be.toFixed(1)+'%');
+  const w=$('pvWin');if(!w)return;w.style.width=(p*100).toFixed(1)+'%';w.classList.toggle('lo',ex<0);$('pvBE').style.left=be+'%';$('eNl').textContent=Math.round(n);$('eExp').style.color=ex>=0?'var(--go)':'var(--stop)';
+  const edge=p*100-be;$('pvEdge').innerHTML='Your win rate is <b>'+Math.abs(edge).toFixed(1)+' points '+(edge>=0?'above':'below')+'</b> break-even.';$('pvEdge').style.marginTop='14px';}
 
 /* ---------- delegated input handling (one set of listeners for the whole app) ---------- */
 let lastFlip=0;
 function flipCard(){const now=Date.now();if(now-lastFlip<300)return;lastFlip=now;const fc=$('fc');if(!fc)return;fc.classList.toggle('flip');fc.setAttribute('aria-pressed',fc.classList.contains('flip'));}
 document.addEventListener('input',e=>{const t=e.target;try{
   if(t.id==='nt'){const r=route();if(r.v!=='lesson')return;state.notes[r.p]=t.value;save();touchDay();const s=$('sv');if(s){s.classList.add('on');clearTimeout(window._st);window._st=setTimeout(()=>s.classList.remove('on'),1200);}return;}
+  if(t.closest&&t.closest('.tk-in'))fitIn(t);
   if(t.closest&&t.closest('#posCalc')){calcPos();return;}
   if(/^e(Win|RR|N|R)$/.test(t.id)){calcExp();return;}
   if(/^t(Entry|Stop|Target|Exit)$/.test(t.id))tradePreview();
 }catch(err){console.error(err);diag('handler: '+err.message);}});
 document.addEventListener('change',e=>{const t=e.target;try{
-  if(t.matches&&t.matches('.checklist input[type=checkbox]')){state.checks[t.id]=t.checked;if(t.checked)pop(t,'pop');save();touchDay();if(t.classList.contains('sc'))score();return;}
+  if(t.matches&&t.matches('.checklist input[type=checkbox]')){state.checks[t.id]=t.checked;if(t.checked)pop(t,'pop');save();touchDay();if(t.classList.contains('sc'))score();clProg();return;}
   if(t.id==='cInst'){presetPos();return;}
   if(t.id==='tDir')tradePreview();
 }catch(err){console.error(err);diag('handler: '+err.message);}});
@@ -2888,10 +3042,11 @@ document.addEventListener('click',e=>{const t=e.target;try{
 let armed=null;
 document.addEventListener('click',e=>{
   const g=e.target.closest('[data-go]');if(g&&!g.disabled){e.preventDefault();go(g.dataset.go);return;}
-  const th=e.target.closest('[data-theme]');if(th){state.theme=th.dataset.theme;save();applyTheme();render(true);return;}
+  const th=e.target.closest('button[data-theme]');if(th){state.theme=th.dataset.theme;save();applyTheme();render(true);return;}
   const dl=e.target.closest('[data-del]');if(dl){const id=+dl.dataset.del;if(armed!==id){armed=id;dl.classList.add('arm');dl.textContent='Confirm';setTimeout(()=>{if(armed===id){armed=null;render(true);}},3000);return;}journal.trades=journal.trades.filter(t=>t.id!==id);armed=null;saveJ();render(true);toast('Trade deleted');return;}
   const a=e.target.closest('[data-act]');if(!a)return;const act=a.dataset.act,r=route();
   if(act==='search')openSpot();
+  else if(act==='inst'){$('cInst').value=a.dataset.v;a.parentNode.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b===a));segs();presetPos();}
   else if(act==='ckzoom'){ckZoom=a.dataset.z;try{localStorage.setItem('tm-ckzoom',ckZoom);}catch(e){}ckKey='';tickClock();}
   else if(act==='mark'){const id=r.p;state.marks[id]=!state.marks[id];if(!state.marks[id])delete state.marks[id];save();a.classList.toggle('saved',!!state.marks[id]);chrome('lesson');toast(state.marks[id]?'Saved for later':'Removed from saved');}
   else if(act==='complete'){const l=FLAT[BYID[r.p]];state.done[l.id]=!state.done[l.id];if(state.done[l.id])touchDay();save();setMark(l);chrome('lesson');
@@ -2913,7 +3068,7 @@ document.addEventListener('click',e=>{
     if(!d||d.app!=='trading-manual'||!d.state){$('rsMsg').textContent='That does not look like a Trading Manual backup.';return;}
     const th=state.theme;state=Object.assign({done:{},notes:{},checks:{},quiz:{},marks:{},days:{},fc:{},last:null,theme:th},d.state);journal=d.journal&&Array.isArray(d.journal.trades)?d.journal:{trades:[]};norm();save();saveJ();applyTheme();closeSheet();render(true);toast('Progress restored');}
   else if(act==='clearscore'){document.querySelectorAll('.sc').forEach(c=>{c.checked=false;state.checks[c.id]=false;});save();score();}
-  else if(act==='clearchecks'){document.querySelectorAll('.checklist input').forEach(c=>{c.checked=false;state.checks[c.id]=false;});save();toast('Checklists cleared');}
+  else if(act==='clearchecks'){document.querySelectorAll('.checklist input').forEach(c=>{c.checked=false;state.checks[c.id]=false;});save();clProg();toast('Checklists cleared');}
   else if(act==='fillodds'){const st=stats(journal.trades);$('eWin').value=(st.wr*100).toFixed(1);$('eRR').value=(st.avgWin||1).toFixed(2);$('eWin').dispatchEvent(new Event('input'));}
   else if(act==='fc-know'||act==='fc-again'){advanceCard(act==='fc-know');}
   else if(act==='fc-shuffle'){shuffle(deck);dI=0;const fc=$('fc');if(fc&&!RM()){fc.classList.add('shuf');setTimeout(()=>{render(true);cardIn('up');},260);}else render(true);}
@@ -2955,8 +3110,8 @@ window.addEventListener('scroll',onScroll,{passive:true});
 
 /* ---------- motion ---------- */
 const SEGPOS={};
-function segs(){document.querySelectorAll('.seg[data-seg]').forEach(sg=>{const on=sg.querySelector('button.on');if(!on)return;let ind=sg.querySelector('.ind');if(!ind){ind=document.createElement('span');ind.className='ind';sg.prepend(ind);}
-  const k=sg.dataset.seg,to={l:on.offsetLeft,w:on.offsetWidth},from=SEGPOS[k];
+function segs(){document.querySelectorAll('.seg[data-seg]').forEach(sg=>{const on=sg.querySelector('button.on');if(!on)return;let ind=sg.querySelector('.ind');const k=sg.dataset.seg,to={l:on.offsetLeft,w:on.offsetWidth},from=SEGPOS[k];
+  if(!ind){ind=document.createElement('span');ind.className='ind';sg.prepend(ind);const st=from||to;ind.style.transition='none';ind.style.left=st.l+'px';ind.style.width=st.w+'px';void ind.offsetWidth;ind.style.transition='';}
   if(from&&!RM()&&(from.l!==to.l||from.w!==to.w)){ind.style.transition='none';ind.style.left=from.l+'px';ind.style.width=from.w+'px';void ind.offsetWidth;ind.style.transition='';}
   ind.style.left=to.l+'px';ind.style.width=to.w+'px';SEGPOS[k]=to;});}
 function countUp(el){const txt=el.textContent,m=txt.match(/-?[\d,]*\.?\d+/);if(!m)return;const raw=m[0],val=parseFloat(raw.replace(/,/g,'')),dec=(raw.split('.')[1]||'').length,comma=raw.includes(',');if(!isFinite(val)||val===0)return;
