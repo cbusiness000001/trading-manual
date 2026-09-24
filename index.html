@@ -106,9 +106,6 @@ h2.sec{font-size:22px;font-weight:700;letter-spacing:-.018em;margin:34px 0 12px}
 .clock-time{text-align:right;flex-shrink:0}
 .clock-time b{display:block;font-size:28px;font-weight:600;letter-spacing:-.02em;line-height:1.15}
 .clock-time span{font-size:13px;color:var(--label2)}
-.tl{position:relative;height:12px;border-radius:6px;background:var(--fill2);margin:44px 0 8px;overflow:visible}
-.tl i{position:absolute;top:0;bottom:0;border-radius:6px}
-.needle{position:absolute;top:-6px;width:3px;height:24px;border-radius:2px;background:var(--label);transform:translateX(-1.5px);box-shadow:0 0 0 2px var(--bg2);transition:left 1s linear}
 .nowdot{position:absolute;top:50%;width:16px;height:16px;margin:-8px 0 0 -8px;border-radius:50%;background:#FF3B30;box-shadow:0 0 0 3px var(--bg2),0 2px 6px rgba(0,0,0,.25);transition:left 1s linear,background .3s;z-index:3}
 .nowdot::after{content:'';position:absolute;inset:-6px;border-radius:50%;border:2px solid #FF3B30;opacity:0;animation:nowpulse 2s cubic-bezier(.2,.6,.4,1) infinite}
 @keyframes nowpulse{0%{transform:scale(.55);opacity:.75}100%{transform:scale(1.8);opacity:0}}
@@ -119,9 +116,38 @@ h2.sec{font-size:22px;font-weight:700;letter-spacing:-.018em;margin:34px 0 12px}
 .nowlbl.ra{left:auto;right:-4px;transform:none}.nowlbl.ra::after{left:auto;right:8px;margin-left:0}
 .nowdot.off .nowlbl{background:var(--label3)}
 .lg-now{background:#FF3B30!important;border-radius:50%!important}
-.tl-l{position:relative;height:16px;font-size:12px;color:var(--label3)}
-.tl-l span{position:absolute;transform:translateX(-50%)}
-.tl-l span:first-child{transform:none}.tl-l span:last-child{transform:translateX(-100%)}
+.ck-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}
+.ck-st{background:var(--fill2);border-radius:12px;padding:10px 12px 11px;min-width:0}
+.ck-st span{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:500;color:var(--label2)}
+.ck-st span i{width:7px;height:7px;border-radius:50%;background:var(--label3);flex-shrink:0}
+.ck-st span i.go{background:var(--go);box-shadow:0 0 0 3px var(--go-bg)}.ck-st span i.amber{background:#FF9F0A;box-shadow:0 0 0 3px var(--amber-bg)}
+.ck-st b{display:block;font-size:15px;font-weight:600;letter-spacing:-.012em;margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ck-st em{display:block;font-style:normal;font-size:12px;color:var(--label2);margin-top:1px;line-height:1.35}
+.ck-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:22px}
+.ck-h{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:12px;font-weight:600;color:var(--label3);text-transform:uppercase;letter-spacing:.05em}
+.ck-zoom{display:inline-flex;background:var(--fill);border-radius:8px;padding:2px}
+.ck-zoom button{white-space:nowrap;font-size:12px;font-weight:500;padding:3px 10px;border-radius:6px;color:var(--label2);transition:background .2s,color .2s}
+.ck-zoom button.on{background:var(--seg-on);color:var(--label);box-shadow:0 1px 3px rgba(0,0,0,.12),0 0 0 .5px rgba(0,0,0,.04)}
+.ck-chart{--lw:86px;position:relative;padding-top:36px}
+.ck-under{position:absolute;left:var(--lw);right:0;top:32px;bottom:22px;pointer-events:none}
+.ck-band{position:absolute;top:0;bottom:0;background:var(--go-bg);border-radius:5px}
+.ck-band.sec{opacity:.6}
+.ck-gl{position:absolute;top:4px;bottom:0;width:1px;background:var(--sep);opacity:.55}
+.ck-row{display:flex;align-items:center;height:24px}
+.ck-row.ck-plan{height:30px;margin-bottom:6px}
+.ck-lab{width:var(--lw);flex-shrink:0;display:flex;align-items:center;gap:7px;padding-right:8px;font-size:12.5px;color:var(--label3);white-space:nowrap;overflow:hidden}
+.ck-lab i{width:8px;height:8px;border-radius:50%;flex-shrink:0;opacity:.4}
+.ck-lab.on{color:var(--label);font-weight:600}.ck-lab.on i{opacity:1}
+.ck-row.ck-plan .ck-lab{color:var(--label);font-weight:600}
+.ck-trk{position:relative;flex:1;height:10px;border-radius:5px;background:var(--fill2)}
+.ck-row.ck-plan .ck-trk{height:14px;border-radius:7px}
+.ck-trk>i{position:absolute;top:0;bottom:0;border-radius:inherit}
+.ck-s{opacity:.32;transition:opacity .3s}.ck-s.on{opacity:1}
+.ck-needle{position:absolute;top:59px;bottom:22px;width:2px;margin-left:-1px;border-radius:1px;background:#FF3B30;opacity:.5;pointer-events:none;transition:left 1s linear}
+.ck-needle.off{background:var(--label3)}
+.ck-ax{position:relative;white-space:nowrap;margin-left:var(--lw);height:16px;margin-top:6px;font-size:11.5px;color:var(--label3)}
+.ck-ax span{position:absolute;transform:translateX(-50%)}
+.ck-ax span:first-child{transform:none}.ck-ax span:last-child{transform:translateX(-100%)}
 .legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:14px;font-size:13px;color:var(--label2)}
 .legend span{display:flex;align-items:center;gap:6px}
 .legend i{width:10px;height:10px;border-radius:3px}
@@ -366,6 +392,7 @@ input[type=checkbox]:checked{background:var(--blue) url("data:image/svg+xml,%3Cs
   .grid2{grid-template-columns:1fr}
   .qa{grid-template-columns:1fr 1fr}
   .clock-top{flex-direction:column;gap:8px}.clock-time{text-align:left}
+  .clock{padding:20px 18px 18px}.ck-stats{grid-template-columns:1fr;gap:8px}.ck-st{display:flex;flex-wrap:wrap;align-items:center;column-gap:10px;padding:9px 12px}.ck-st b{margin:0 0 0 auto;font-size:14.5px}.ck-st em{width:100%}.ck-chart{--lw:78px}.ck-lab{font-size:12px;gap:5px;padding-right:6px}
   .tabbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--bar);-webkit-backdrop-filter:saturate(180%) blur(24px);backdrop-filter:saturate(180%) blur(24px);border-top:.5px solid var(--sep);padding:6px 4px env(safe-area-inset-bottom,0px)}
   .tabbar button{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:10.5px;font-weight:500;color:var(--label3);padding:4px 0 6px}
   .tabbar button svg.i{width:24px;height:24px}
@@ -2602,31 +2629,76 @@ function gates(st){
 /* market clock */
 const PH=[[0,385,'Early morning','Futures are trading overnight. Your prep starts at 7:00 AM.','gray'],[385,405,'News window','US data releases hit at 6:30 AM. Hands off until 6:45.','amber'],[405,420,'Get ready','Coffee, no social media. Prep starts at 7:00.','gray'],[420,450,'Pre-market prep','Check Forex Factory, mark levels, draw zones, write your plan.','blue'],[450,465,'Opening bell','Watch only. The first 15 minutes are full of fake moves.','amber'],[465,540,'Primary window','Your best setups happen now. Execute only what is in your plan.','go'],[540,720,'Midday lull','Volume drops and setups stall. A+ only, or step away.','gray'],[720,810,'Secondary window','Volume returns. Same rules as the morning.','go'],[810,840,'No new entries','Manage open trades only. Cash market closes at 2:00 PM.','amber'],[840,900,'Review','Cash session is closed. Screenshot and journal your trades.','blue'],[900,960,'Futures break','CME daily maintenance break until 4:00 PM.','gray'],[960,1440,'Evening','Good time for an FX Replay backtesting session.','gray']];
 const SEGC={go:'var(--go)',amber:'#FF9F0A',blue:'var(--blue)',gray:'var(--fill)'};
-const R0=360,R1=900,cpos=v=>((v-R0)/(R1-R0)*100);
+/* forex sessions in Mountain Time [id,name,open,close,color]; London follows UK clocks, so it shifts during DST mismatch weeks */
+const SESS=[['syd','Sydney',900,1440,'#A2845E'],['asia','Asia (Tokyo)',1020,120,'#AF52DE'],['ldn','London',60,600,'#5E5CE6'],['ny','New York',360,900,'#00C7BE']];
+const ZOOMS={'24':[0,1440,[[0,'12a'],[180,'3a'],[360,'6a'],[540,'9a'],[720,'12p'],[900,'3p'],[1080,'6p'],[1260,'9p'],[1440,'12a']],180],day:[360,900,[[360,'6a'],[420,'7a'],[480,'8a'],[540,'9a'],[600,'10a'],[660,'11a'],[720,'12p'],[780,'1p'],[840,'2p'],[900,'3p']],60]};
+let ckZoom='24';try{const z=localStorage.getItem('tm-ckzoom');if(ZOOMS[z])ckZoom=z;}catch(e){}
+const ckR=()=>ZOOMS[ckZoom],cpos=v=>{const r=ckR();return (v-r[0])/(r[1]-r[0])*100;};
+const fmtT=m=>{m=((m%1440)+1440)%1440;const h=Math.floor(m/60),mi=m%60;return ((h+11)%12+1)+':'+String(mi).padStart(2,'0')+' '+(h<12?'AM':'PM');};
+const fmtD=m=>m>=60?Math.floor(m/60)+' hr'+(m%60?' '+(m%60)+' min':''):Math.max(1,m)+' min';
+const until=(to,m)=>((to-m)%1440+1440)%1440;
+const inWin=(m,a,b)=>a<b?m>=a&&m<b:m>=a||m<b;
+function ldnShift(){try{const f=new Intl.DateTimeFormat('en-US',{timeZone:'Europe/London',hour12:false,hour:'2-digit',minute:'2-digit'}),p={};f.formatToParts(new Date()).forEach(x=>p[x.type]=x.value);const q=mtParts();return 420-until((+p.hour%24)*60+ +p.minute,q.h*60+q.mi);}catch(e){return 0;}}
+function sessions(){const sh=ldnShift();return SESS.map(x=>x[0]==='ldn'?[x[0],x[1],x[2]+sh,x[3]+sh,x[4]]:x);}
+function marketState(p,m,ss){
+  const wd=p.wd,fxOpen=!(wd==='Sat'||(wd==='Sun'&&m<900)||(wd==='Fri'&&m>=900));
+  const act=fxOpen?ss.filter(x=>inWin(m,x[2],x[3])):[];
+  let fx;
+  if(!act.length)fx={d:'',b:'Forex closed',e:'Sydney opens Sunday 3:00 PM'};
+  else{const names=act.map(x=>x[0]==='asia'?'Asia':x[1]),end=act.reduce((a,x)=>until(x[3],m)<until(a[3],m)?x:a);
+    const ldnNy=act.some(x=>x[0]==='ldn')&&act.some(x=>x[0]==='ny');
+    fx={d:ldnNy?'go':'amber',b:names.join(' + '),e:ldnNy?'Peak liquidity until '+fmtT(end[3]):act.length>1?'Overlap until '+fmtT(end[3])+', '+fmtD(until(end[3],m)):end[1]+' closes '+fmtT(end[3])+', in '+fmtD(until(end[3],m))};}
+  const cmeWe=wd==='Sat'||(wd==='Sun'&&m<960)||(wd==='Fri'&&m>=900);let cme;
+  if(cmeWe)cme={d:'',b:'Closed',e:'Reopens Sunday 4:00 PM'};
+  else if(m>=900&&m<960)cme={d:'amber',b:'Daily break',e:'Reopens 4:00 PM, in '+fmtD(960-m)};
+  else cme={d:'go',b:'Open',e:(wd==='Fri'?'Weekend close ':'Daily close ')+'3:00 PM, in '+fmtD(until(900,m))};
+  const wk=wd!=='Sat'&&wd!=='Sun',nxt=wd==='Fri'||!wk?'Monday':'tomorrow';let stk;
+  if(!wk||m>=1080)stk={d:'',b:'Closed',e:'Pre-market opens '+(wk&&wd!=='Fri'?'2:00 AM':'Monday 2:00 AM')};
+  else if(m<120)stk={d:'',b:'Closed',e:'Pre-market opens 2:00 AM, in '+fmtD(120-m)};
+  else if(m<450)stk={d:'amber',b:'Pre-market',e:'Opening bell 7:30 AM, in '+fmtD(450-m)};
+  else if(m<840)stk={d:'go',b:'Regular session',e:'Closes 2:00 PM, in '+fmtD(840-m)};
+  else stk={d:'amber',b:'After hours',e:'Ends 6:00 PM, next open '+nxt};
+  return {act:act.map(x=>x[0]),fx,cme,stk};
+}
 function clockState(){
-  const p=mtParts(),m=p.h*60+p.mi,mf=m+p.s/60,wd=p.wd;const t12=((p.h+11)%12+1)+':'+String(p.mi).padStart(2,'0')+' '+(p.h<12?'AM':'PM');
+  const p=mtParts(),m=p.h*60+p.mi,mf=m+p.s/60,wd=p.wd;const t12=fmtT(m),ss=sessions(),mk=marketState(p,m,ss);
   let phase,tip,col,next='';
   const weekend=wd==='Sat'||(wd==='Sun'&&m<960)||(wd==='Fri'&&m>=900);
   if(weekend){phase='Markets closed';tip=wd==='Fri'?'Futures are closed for the weekend. Good time for your weekly review.':wd==='Sat'?'A rest day. Sunday is for your weekly review and next week\'s calendar.':'Futures reopen at 4:00 PM today. Plan the week: FOMC, CPI and NFP days.';col='gray';}
   else{const cur=PH.find(x=>m>=x[0]&&m<x[1])||PH[PH.length-1];phase=cur[2];tip=cur[3];col=cur[4];const ni=PH.indexOf(cur)+1;
-    if(ni<PH.length){const mins=PH[ni][0]-m;next='<b>'+PH[ni][2]+'</b> in '+(mins>=60?Math.floor(mins/60)+' hr '+(mins%60)+' min':mins+' min');}}
-  const before=mf<R0,after=mf>R1,off=weekend||before||after,dp=Math.max(0,Math.min(100,cpos(mf)));
-  const lbl=off?(weekend?'Closed, '+t12:before?'Now '+t12+', before 6 AM':'Now '+t12+', after 3 PM'):'Now '+t12.replace(/ (AM|PM)$/,'');
-  return {key:(weekend?'we':'wd')+phase,weekend,phase,tip,col,next,t12,dp,off,lbl,align:dp<14?'la':dp>86?'ra':''};
+    if(ni<PH.length){const mins=PH[ni][0]-m;next='Next up: <b>'+PH[ni][2]+'</b> at '+fmtT(PH[ni][0])+', in '+fmtD(mins);}}
+  const r=ckR(),before=mf<r[0],after=mf>r[1],off=weekend||before||after,dp=Math.max(0,Math.min(100,cpos(mf)));
+  const lbl=off?(weekend?'Closed, '+t12:before?'Now '+t12+', before '+fmtT(r[0]).replace(':00',''):'Now '+t12+', after '+fmtT(r[1]).replace(':00','')):'Now '+t12.replace(/ (AM|PM)$/,'');
+  return {key:ckZoom+(weekend?'we':'wd')+phase+mk.act.join()+mk.cme.b+mk.stk.b+ss[2][2],weekend,phase,tip,col,next,t12,dp,off,lbl,align:dp<14?'la':dp>86?'ra':'',ss,mk};
 }
+function ckStatsHTML(mk){const t=(h,x)=>'<div class="ck-st"><span><i class="'+x.d+'"></i>'+h+'</span><b>'+x.b+'</b><em>'+x.e+'</em></div>';
+  return t('Forex session',mk.fx)+t('CME futures',mk.cme)+t('US stocks',mk.stk);}
 function clockHTML(st){
-  let bar='<div class="tl">';PH.forEach(x=>{if(x[1]<=R0||x[0]>=R1||x[4]==='gray')return;const a=Math.max(R0,x[0]),b=Math.min(R1,x[1]);bar+='<i style="left:'+cpos(a)+'%;width:'+(cpos(b)-cpos(a))+'%;background:'+SEGC[x[4]]+(x[2]==='Secondary window'?';opacity:.6':'')+'"></i>';});
-  bar+='<div class="nowdot'+(st.off?' off':'')+'" id="ckDot" style="left:'+st.dp+'%"><span class="nowlbl '+st.align+'" id="ckLbl">'+st.lbl+'</span></div></div>';
-  const lab='<div class="tl-l">'+[[360,'6 AM'],[480,'8'],[600,'10'],[720,'12 PM'],[840,'2'],[900,'3']].map(x=>'<span style="left:'+cpos(x[0])+'%">'+x[1]+'</span>').join('')+'</div>';
-  return '<div class="clock-top"><div><span class="pill '+(st.col==='gray'?'gray':st.col)+'">'+(st.weekend?'Weekend':'Right now in Colorado')+'</span><div class="clock-phase" style="margin-top:10px">'+st.phase+'</div><div class="clock-tip">'+st.tip+'</div></div><div class="clock-time"><b id="ckTime">'+st.t12+'</b><span>Mountain Time</span></div></div>'+bar+lab+
-   '<div class="legend"><span><i class="lg-now"></i>Now</span><span><i style="background:var(--go)"></i>Trade windows</span><span><i style="background:#FF9F0A"></i>Caution</span><span><i style="background:var(--blue)"></i>Prep and review</span></div><div class="clock-next" id="ckNext"'+(st.next?'':' hidden')+'>'+st.next+'</div><div class="clock-next" style="font-size:13px;margin-top:6px">Times assume a normal trading day. Check Forex Factory for news and the CME calendar for holidays.</div>';
+  const r=ckR(),seg=(a,b,x)=>{const out=[];(a<b?[[a,b]]:[[a,1440],[0,b]]).forEach(q=>{const u=Math.max(r[0],q[0]),v=Math.min(r[1],q[1]);if(v>u)out.push('<i '+x+' style="left:'+cpos(u)+'%;width:'+(cpos(v)-cpos(u))+'%;');});return out;};
+  let under='<div class="ck-under">';
+  for(let g=r[0]+r[3];g<r[1];g+=r[3])under+='<i class="ck-gl" style="left:'+cpos(g)+'%"></i>';
+  PH.forEach(x=>{if(x[4]==='go')seg(x[0],x[1],'').forEach(h=>under+=h.replace('<i ','<i class="ck-band'+(x[2]==='Secondary window'?' sec':'')+'"')+'"></i>');});
+  under+='</div>';
+  let plan='<div class="ck-row ck-plan"><span class="ck-lab">My plan</span><div class="ck-trk">';
+  PH.forEach(x=>{if(x[4]==='gray')return;seg(x[0],x[1],'title="'+x[2]+', '+fmtT(x[0])+' to '+fmtT(x[1])+'"').forEach(h=>plan+=h+'background:'+SEGC[x[4]]+(x[2]==='Secondary window'?';opacity:.6':'')+'"></i>');});
+  plan+='<div class="nowdot'+(st.off?' off':'')+'" id="ckDot" style="left:'+st.dp+'%"><span class="nowlbl '+st.align+'" id="ckLbl">'+st.lbl+'</span></div></div></div>';
+  let rows='';st.ss.forEach(x=>{const on=st.mk.act.includes(x[0]);rows+='<div class="ck-row"><span class="ck-lab'+(on?' on':'')+'"><i style="background:'+x[4]+'"></i>'+x[1].replace(' (Tokyo)','')+'</span><div class="ck-trk">'+seg(x[2],x[3],'class="ck-s'+(on?' on':'')+'" title="'+x[1]+', '+fmtT(x[2])+' to '+fmtT(x[3])+' MT"').map(h=>h+'background:'+x[4]+'"></i>').join('')+'</div></div>';});
+  const ax='<div class="ck-ax">'+r[2].map(x=>'<span style="left:'+cpos(x[0])+'%">'+x[1]+'</span>').join('')+'</div>';
+  const zoom='<div class="ck-zoom">'+[['24','24 hours'],['day','Trading day']].map(z=>'<button data-act="ckzoom" data-z="'+z[0]+'" class="'+(ckZoom===z[0]?'on':'')+'">'+z[1]+'</button>').join('')+'</div>';
+  return '<div class="clock-top"><div><span class="pill '+(st.col==='gray'?'gray':st.col)+'">'+(st.weekend?'Weekend':'Right now in Colorado')+'</span><div class="clock-phase" style="margin-top:10px">'+st.phase+'</div><div class="clock-tip">'+st.tip+'</div></div><div class="clock-time"><b id="ckTime">'+st.t12+'</b><span>Mountain Time</span></div></div>'+
+   '<div class="ck-stats" id="ckStats">'+ckStatsHTML(st.mk)+'</div>'+
+   '<div class="ck-head"><span class="ck-h">Sessions (MT)</span>'+zoom+'</div>'+
+   '<div class="ck-chart">'+under+plan+rows+'<i class="ck-needle'+(st.off?' off':'')+'" id="ckNeedle" style="left:calc(var(--lw) + (100% - var(--lw)) * '+(st.dp/100).toFixed(5)+')"></i>'+ax+'</div>'+
+   '<div class="legend"><span><i class="lg-now"></i>Now</span><span><i style="background:var(--go)"></i>Prime trade windows</span><span><i style="background:#FF9F0A"></i>Caution</span><span><i style="background:var(--blue)"></i>Prep and review</span></div><div class="clock-next" id="ckNext"'+(st.next?'':' hidden')+'>'+st.next+'</div><div class="clock-next" style="font-size:13px;margin-top:6px">Times assume a normal trading day. Check Forex Factory for news and the CME calendar for holidays.</div>';
 }
 let ckKey='';
 function tickClock(){const c=$('clock');if(!c)return;const st=clockState();
   if(st.key!==ckKey||!$('ckDot')){c.innerHTML=clockHTML(st);ckKey=st.key;return;}
-  const d=$('ckDot'),l=$('ckLbl');d.style.left=st.dp+'%';d.classList.toggle('off',st.off);
+  const d=$('ckDot'),l=$('ckLbl'),nd=$('ckNeedle');d.style.left=st.dp+'%';d.classList.toggle('off',st.off);
+  if(nd){nd.style.left='calc(var(--lw) + (100% - var(--lw)) * '+(st.dp/100).toFixed(5)+')';nd.classList.toggle('off',st.off);}
   if(l.textContent!==st.lbl)l.textContent=st.lbl;l.className='nowlbl '+st.align;
   const t=$('ckTime');if(t.textContent!==st.t12)t.textContent=st.t12;
+  const sx=$('ckStats'),sh=ckStatsHTML(st.mk);if(sx&&sx.innerHTML!==sh)sx.innerHTML=sh;
   const n=$('ckNext');if(n&&n.innerHTML!==st.next){n.innerHTML=st.next;n.hidden=!st.next;}}
 setInterval(tickClock,1000);
 document.addEventListener('visibilitychange',()=>{if(!document.hidden)tickClock();});
@@ -2820,6 +2892,7 @@ document.addEventListener('click',e=>{
   const dl=e.target.closest('[data-del]');if(dl){const id=+dl.dataset.del;if(armed!==id){armed=id;dl.classList.add('arm');dl.textContent='Confirm';setTimeout(()=>{if(armed===id){armed=null;render(true);}},3000);return;}journal.trades=journal.trades.filter(t=>t.id!==id);armed=null;saveJ();render(true);toast('Trade deleted');return;}
   const a=e.target.closest('[data-act]');if(!a)return;const act=a.dataset.act,r=route();
   if(act==='search')openSpot();
+  else if(act==='ckzoom'){ckZoom=a.dataset.z;try{localStorage.setItem('tm-ckzoom',ckZoom);}catch(e){}ckKey='';tickClock();}
   else if(act==='mark'){const id=r.p;state.marks[id]=!state.marks[id];if(!state.marks[id])delete state.marks[id];save();a.classList.toggle('saved',!!state.marks[id]);chrome('lesson');toast(state.marks[id]?'Saved for later':'Removed from saved');}
   else if(act==='complete'){const l=FLAT[BYID[r.p]];state.done[l.id]=!state.done[l.id];if(state.done[l.id])touchDay();save();setMark(l);chrome('lesson');
     if(state.done[l.id]){pop($('markBtn'),'pop');toast('Marked complete');const nx=FLAT[BYID[l.id]+1];if(nx)setTimeout(()=>{if(route().p===l.id)go('lesson/'+nx.id);},650);}}
