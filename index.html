@@ -2962,7 +2962,7 @@ function segs(){document.querySelectorAll('.seg[data-seg]').forEach(sg=>{const o
 function countUp(el){const txt=el.textContent,m=txt.match(/-?[\d,]*\.?\d+/);if(!m)return;const raw=m[0],val=parseFloat(raw.replace(/,/g,'')),dec=(raw.split('.')[1]||'').length,comma=raw.includes(',');if(!isFinite(val)||val===0)return;
   const pre=txt.slice(0,m.index),post=txt.slice(m.index+raw.length),t0=performance.now(),D=750;
   const fmt=v=>{let s=Math.abs(v).toFixed(dec);if(comma)s=Number(s).toLocaleString(undefined,{minimumFractionDigits:dec,maximumFractionDigits:dec});return (v<0?'-':'')+s;};
-  const step=now=>{const k=Math.min(1,(now-t0)/D),e=1-Math.pow(1-k,3);el.textContent=pre+fmt(val*e)+post;if(k<1)requestAnimationFrame(step);else el.textContent=txt;};requestAnimationFrame(step);}
+  let last=txt;const step=now=>{if(el.textContent!==last)return;const k=Math.min(1,(now-t0)/D),e=1-Math.pow(1-k,3);last=k<1?pre+fmt(val*e)+post:txt;el.textContent=last;if(k<1)requestAnimationFrame(step);};requestAnimationFrame(step);}
 function motion(fresh){segs();if(!fresh||RM())return;
   requestAnimationFrame(()=>requestAnimationFrame(()=>{
     document.querySelectorAll('#view [data-to]').forEach(c=>{c.style.strokeDashoffset=c.dataset.to;c.removeAttribute('data-to');});
